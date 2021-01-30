@@ -1,30 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div style="display: flex; justify-content: space-around">
+    <div>
+      <TodoList title="Todo without Compostion Api "/>
+    </div>
+    <div>
+      <TodoListV3 title="Todo with Compostion Api" />
+    </div>
   </div>
-  <router-view/>
 </template>
+<script>
+import TodoList from "./components/TodosList"
+import TodoListV3 from "./components/TodoListV3"
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+export default {
+  components: {
+    TodoList,
+    TodoListV3
+  }
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
